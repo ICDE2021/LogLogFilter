@@ -94,7 +94,8 @@ public:
 		}
 
 		if (v < threshold) {
-			double lambda = beta_random(timestamp, weight);
+			uint32_t seeds = key & timestamp;
+			double lambda = beta_random(seeds, weight);
 			uint32_t phi = floor(log(1.0 / lambda) / log(2));
 			if (phi <= threshold) {
 				f = f + weight;
