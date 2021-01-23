@@ -12,7 +12,7 @@ mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make
-cd ../
+cd ../bin
 ./demo
 ```
 
