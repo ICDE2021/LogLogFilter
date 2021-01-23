@@ -87,7 +87,8 @@ public:
 		if (v < threshold) {
 			f++;
 			for (int i = 0; i < d; i++) {
-				uint32_t random_num = (ValueHash[i]->run((const char *)&timestamp, 12));
+				uint32_t seeds = key & timestamp;
+				uint32_t random_num = (ValueHash[i]->run((const char *)&seeds, 12));
 				int temp = 0;
 				bitset<32> bittemp(random_num);
 				for (int i = 31; i >= 0; i--) {
